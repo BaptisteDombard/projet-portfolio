@@ -7,7 +7,7 @@
   \************************************************************/
 /***/ (() => {
 
-alert("Le site n'étant pas complètement terminé, certaine fonctionalité ne fonctionne pas, veuillez m'en excuser");
+console.log("Le site n'étant pas complètement terminé, certaine fonctionalité ne fonctionne pas, veuillez m'en excuser");
 
 /***/ }),
 
