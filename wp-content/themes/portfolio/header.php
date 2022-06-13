@@ -11,9 +11,9 @@
 <body>
 <header class="header">
     <nav class="header__nav nav">
-        <?= wp_get_attachment_image(13, 'thumbnail', 'true',['class'=>'logoBD','alt'=>'logo Baptiste Dombard'])?>
-        <h2 class="nav__title"><?= __('Navigation principale', 'dw'); ?></h2>
+        <h2 class="nav__title hidden"><?= __('Navigation principale', 'dw'); ?></h2>
         <ul class="nav__container">
+            <li class="nav__item"><a href="<?= get_home_url()?>" class="nav__logolink"></a><?= wp_get_attachment_image(13, 'thumbnail', 'true',['class'=>'nav__logoBD','alt'=>'logo Baptiste Dombard'])?></li>
             <?php foreach(dw_get_menu_items('primary') as $link): ?>
                 <li class="<?= $link->getBemClasses('nav__item'); ?>">
                     <a  href="<?= $link->url; ?>"

@@ -2,7 +2,9 @@
 <?php get_header(); ?>
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
     <main class="layout contact">
-        <h2 class="contact__title"><?= get_the_title(); ?></h2>
+        <h2 class="contact__title">Contactez moi via ce formulaire</h2>
+        <p class="contact__excerpt">OU</p>
+        <p class="contact__excerpt2">par ces moyens</p>
         <div class="contact__content">
             <?php the_content(); ?>
         </div>
@@ -13,34 +15,28 @@
                 <?php endif; ?>
                 <div class="form__field">
                     <label for="firstname" class="form__label">Votre prénom</label>
-                    <input type="text" name="firstname" id="firstname" class="form__input" value="<?= dw_get_contact_field_value('firstname'); ?>">
+                    <input type="text" name="firstname" id="firstname" class="form__input" placeholder="Votre prénom" value="<?= dw_get_contact_field_value('firstname'); ?>">
                     <?= dw_get_contact_field_error('firstname'); ?>
                 </div>
                 <div class="form__field">
                     <label for="lastname" class="form__label">Votre nom</label>
-                    <input type="text" name="lastname" id="lastname" class="form__input" value="<?= dw_get_contact_field_value('lastname'); ?>">
+                    <input type="text" name="lastname" id="lastname" class="form__input" placeholder="Votre nom" value="<?= dw_get_contact_field_value('lastname'); ?>">
                     <?= dw_get_contact_field_error('lastname'); ?>
                 </div>
                 <div class="form__field">
                     <label for="email" class="form__label">Votre adresse e-mail</label>
-                    <input type="email" name="email" id="email" class="form__input" value="<?= dw_get_contact_field_value('email'); ?>">
+                    <input type="email" name="email" id="email" class="form__input" placeholder="Votre adresse e-mail" value="<?= dw_get_contact_field_value('email'); ?>">
                     <?= dw_get_contact_field_error('email'); ?>
                 </div>
                 <div class="form__field">
-                    <label for="phone" class="form__label">Votre numéro de téléphone</label>
-                    <input type="tel" name="phone" id="phone" class="form__input" value="<?= dw_get_contact_field_value('phone'); ?>">
-                    <?= dw_get_contact_field_error('phone'); ?>
-                </div>
-                <div class="form__field">
                     <label for="message" class="form__label">Votre message</label>
-                    <textarea name="message" id="message" cols="30" rows="10" class="form__input"><?= dw_get_contact_field_value('message'); ?></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message" class="form__textarea"><?= dw_get_contact_field_value('message'); ?></textarea>
                     <?= dw_get_contact_field_error('message'); ?>
                 </div>
                 <div class="form__field">
                     <label for="rules" class="form__checkbox">
                         <input type="checkbox" name="rules" id="rules" value="1" />
-                        <span class="form__checklabel">J'accepte les <a href="#">conditions générales d'utilisation</a>.</span>
-                        <span class="form__checklabel"><?= str_replace(':conditions', '<a href="#">' . __('conditions générales d\'utilisation') . '</a>' ,__('J\'accepte les :conditions', 'dw')) ;?></span>
+                        <span class="form__checklabel"><?= str_replace(':conditions', '<a href="#">' . __('conditions générales d\'utilisation') . '</a>' ,__('J\'accepte les :conditions', 'dw')) ;?>.</span>
                     </label>
                     <?= dw_get_contact_field_error('rules'); ?>
                 </div>
@@ -55,4 +51,4 @@
             <?php unset($_SESSION['contact_form_feedback']); endif; ?>
     </main>
 <?php endwhile; endif; ?>
-<?php get_footer(); ?>
+
